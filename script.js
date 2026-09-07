@@ -1,0 +1,3 @@
+const loader=document.getElementById('loader'),pct=document.getElementById('pct'),bar=document.getElementById('bar');
+let n=0;const load=setInterval(()=>{n+=Math.floor(Math.random()*8)+3;if(n>=100){n=100;clearInterval(load);setTimeout(()=>loader.classList.add('hide'),500)}pct.textContent=String(n).padStart(2,'0')+'%';bar.style.width=n+'%'},80);
+let f=0;setInterval(()=>{f++;const s=Math.floor(f/24),h=String(Math.floor(s/3600)).padStart(2,'0'),m=String(Math.floor(s%3600/60)).padStart(2,'0'),q=String(s%60).padStart(2,'0'),z=String(f%24).padStart(2,'0');document.getElementById('tc').textContent=`${h}:${m}:${q}:${z}`},1000/24);
